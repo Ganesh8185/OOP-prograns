@@ -1,0 +1,150 @@
+MCA - I
+OOP Practical Solutions
+OOP Practical Solutions
+Vrushali Patil
+•
+20 Feb
+Kindly write all the 10 assignments in Journal with Title , Objective, Problem statement, Outcomes and Output for all practicals
+
+practical No_1.txt
+Text
+
+Practical no_3.txt
+Text
+
+Practical no_4.txt
+Text
+
+Practical no_5.txt
+Text
+
+Practical no_6.txt
+Text
+
+Practical No_7.txt
+Text
+
+Practical No_8.txt
+Text
+
+Practical no_9.txt
+Text
+
+Practical no_10.txt
+Text
+
+Practocal No_2.txt
+Text
+Class comments
+
+/*Write C++ Program with base class convert declares two variables, val1 and val2, 
+which hold the initial and converted values, respectively. It also defines the functions 
+getinit( ) and getconv( ), which return the initial value and the converted value. 
+These elements of convert are fixed and applicable to all derived classes that will inherit convert. H
+owever, the function that will actually perform the conversion, compute( ), 
+is a pure virtual function that must be defined by the classes derived from convert. 
+The specific nature of compute( ) will be determined by what type of conversion is taking place.*/
+
+
+
+
+#include <iostream> 
+
+using namespace std; 
+
+
+class convert {
+        protected:
+                 double val1;
+                 double val2;
+        public:
+        convert(double i){
+        val1=i;
+}
+double getconv()  {return val2;}
+double getinit()  {return val1;}
+virtual void compute ()=0;
+};
+   //Liters to gallons
+class l_to_g:public convert
+{
+public:
+l_to_g(double i):convert(i){}
+void compute()
+{
+val2=val1/3.7854;
+}
+};
+
+
+class f_to_c:public convert
+{
+public:
+f_to_c(double i):convert(i){}
+void compute()
+{
+val2=(val1-32)/1.8;
+}
+};
+
+
+class c_to_k:public convert
+{
+public:
+c_to_k(double i):convert(i){}
+void compute()
+{
+val2=val1+273.15;
+}
+};
+
+
+class k_to_f:public convert
+{
+public:
+k_to_f(double i):convert(i){}
+void compute()
+{
+val2=val1*915-459.67;
+}
+};
+int main()
+{
+convert *p;
+l_to_g ob(5);
+f_to_c ob1(70);
+c_to_k ob2(50);
+k_to_f ob3(50);
+p=&ob;
+cout<<p->getinit()<<"Liters is";
+p->compute();
+cout<<p->getconv()<<"gallons\n";
+p=&ob1;
+cout<<p->getinit()<<"Farenheit is";
+p->compute();
+cout<<p->getconv()<<"Celcius\n";
+p=&ob2;
+cout<<p->getinit()<<" Celcius is";
+p->compute();
+cout<<p->getconv()<<"kelvin\n";
+p=&ob3;
+cout<<p->getinit()<<" kelvin is";
+p->compute();
+cout<<p->getconv()<<"Farenheit\n";
+return 0;
+}
+
+
+/***********output************
+
+sl162@sl180-HP-dx2480-MT-VP562PA:~/Desktop$ g++ 11.cpp
+sl162@sl180-HP-dx2480-MT-VP562PA:~/Desktop$ ./a.out
+4Liters is1.05669gallons
+70Farenheit is21.1111Celcius
+50 Celcius is323.15kelvin
+50 kelvin is45290.3Farenheit
+sl162@sl180-HP-dx2480-MT-VP562PA:~/Desktop$  */
+
+
+Practical no_10.txt
+Displaying Practical no_10.txt.
